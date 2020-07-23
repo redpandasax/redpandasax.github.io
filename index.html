@@ -88,7 +88,7 @@
                             }
                         }
                         else {
-                            if (jsonObj[randTemp].type_line.search("Land") != -1 && jsonObj.type_line.search("Snow") == -1) {
+                            if (jsonObj[randTemp].type_line.search("Land") != -1 && jsonObj[randTemp].type_line.search("Snow") == -1) {
                                 deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
                             }
                         }
@@ -105,7 +105,7 @@
                             }
                         }
                         else {
-                            if (jsonObj[randTemp].type_line.search("Creature") != -1 && jsonObj.type_line.search("Snow") == -1) {
+                            if (jsonObj[randTemp].type_line.search("Creature") != -1 && jsonObj[randTemp].type_line.search("Snow") == -1) {
                                 deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
                             }
                         }
@@ -123,7 +123,7 @@
                             }
                         }
                         else {
-                            if (jsonObj[randTemp].type_line.search("Creature") == -1 && jsonObj[randTemp].type_line.search("Land") == -1 && jsonObj.type_line.search("Snow") == -1) {
+                            if (jsonObj[randTemp].type_line.search("Creature") == -1 && jsonObj[randTemp].type_line.search("Land") == -1 && jsonObj[randTemp].type_line.search("Snow") == -1) {
                                 deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
                             }
                         }
