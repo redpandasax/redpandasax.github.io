@@ -1,0 +1,116 @@
+<header>
+	<h1>Random Deck Generator for Magic the Gathering</h1>
+</header>
+<body>
+    <script>
+        function deckGen() {
+            let requestURL = 'https://archive.scryfall.com/bulk-data/oracle-cards/oracle-cards-20200721050653.json';
+            let request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+
+            request.onload = function () { const cards = request.response; generateDeck(cards); }
+        }
+    </script>
+
+    <form>
+    <input type="checkbox" id="colWh" name="W" value="1" onclick="toggleVar(wVar)">
+    <label for="colWh">White</label><br />
+    <input type="checkbox" id="colBk" name="B" value="1" onclick="toggleVar(bVar)">
+    <label for="colBk">Black</label><br />
+    <input type="checkbox" id="colR" name="R" value="1" onclick="toggleVar(rVar)">
+    <label for="colR">Red</label><br />
+    <input type="checkbox" id="colBu" name="U" value="1" onclick="toggleVar(uVar)">
+    <label for="colBu">Blue</label><br />
+    <input type="checkbox" id="colGr" name="G" value="1" onclick="toggleVar(gVar)">
+    <label for="colGr">Green</label><br />
+    <input type="checkbox" id="colSn" name="S" value="1" onclick="toggleVar(sVar)">
+    <label for="colSn">Snow</label><br />
+    <button type="button" onclick="deckGen()">Generate random deck</button>
+    </form>
+
+    <script>
+        const header = document.querySelector('header');
+        let wVar = { V: 0 };
+        let bVar = { V: 0 };
+        let rVar = { V: 0 };
+        let uVar = { V: 0 };
+        let gVar = { V: 0 };
+        let sVar = { V: 0 };
+
+        function toggleVar(variable) {
+            if (variable.V == 0) {
+                variable.V = 1;
+            }
+            else if (variable.V == 1) {
+                variable.V = 0;
+            }
+        }
+
+        var landCt = 27;
+        var creatureCt = 23;
+
+        function generateDeck(jsonObj) {
+            var colors = [];
+            var deck = [];
+            const deckHead = document.createElement('h4');
+            deckHead.textContent = 'New Deck';
+            header.appendChild(deckHead);
+
+            if (wVar.V == 1) {
+                colors.push('W');
+            }
+            if (bVar.V == 1) {
+                colors.push('B');
+            }
+            if (rVar.V == 1) {
+                colors.push('R');
+            }
+            if (uVar.V == 1) {
+                colors.push('U');
+            }
+            if (gVar.V == 1) {
+                colors.push('G');
+            }
+            if (sVar.V == 1) {
+                colors.push('S');
+            }
+
+            while (deck.length < landCt) {
+                var randTemp = parseInt(Math.random() * 100000, 10) % jsonObj.length;
+                if (jsonObj[randTemp].color_identity[0] == null || colors.find[jsonObj[randTemp].color_identity[0]] != -1 && jsonObj[randTemp].color_identity[1] == null || colors.find[jsonObj[randTemp].color_identity[1]] != -1 && jsonObj[randTemp].color_identity[2] == null || colors.find[jsonObj[randTemp].color_identity[2]] != -1 && jsonObj[randTemp].color_identity[3] == null || colors.find[jsonObj[randTemp].color_identity[3]] != -1 && jsonObj[randTemp].color_identity[4] == null || colors.find[jsonObj[randTemp].color_identity[4]] != -1) {
+                    if (jsonObj[randTemp].type_line.search("Land") != -1) {
+                        deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
+                    }
+                }
+            }
+            while (deck.length < landCt + creatureCt) {
+                var randTemp = parseInt(Math.random() * 100000, 10) % jsonObj.length;
+                if (jsonObj[randTemp].color_identity[0] == null || colors.find[jsonObj[randTemp].color_identity[0]] != -1 && jsonObj[randTemp].color_identity[1] == null || colors.find[jsonObj[randTemp].color_identity[1]] != -1 && jsonObj[randTemp].color_identity[2] == null || colors.find[jsonObj[randTemp].color_identity[2]] != -1 && jsonObj[randTemp].color_identity[3] == null || colors.find[jsonObj[randTemp].color_identity[3]] != -1 && jsonObj[randTemp].color_identity[4] == null || colors.find[jsonObj[randTemp].color_identity[4]] != -1) {
+                    if (jsonObj[randTemp].type_line.search("Creature") != -1) {
+                        deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
+                    }
+                }
+            }
+            while (deck.length < 60) {
+                var randTemp = parseInt(Math.random() * 100000, 10) % jsonObj.length;
+                if (jsonObj[randTemp].color_identity[0] == null || colors.find[jsonObj[randTemp].color_identity[0]] != -1 && jsonObj[randTemp].color_identity[1] == null || colors.find[jsonObj[randTemp].color_identity[1]] != -1 && jsonObj[randTemp].color_identity[2] == null || colors.find[jsonObj[randTemp].color_identity[2]] != -1 && jsonObj[randTemp].color_identity[3] == null || colors.find[jsonObj[randTemp].color_identity[3]] != -1 && jsonObj[randTemp].color_identity[4] == null || colors.find[jsonObj[randTemp].color_identity[4]] != -1) {
+                    if (jsonObj[randTemp].type_line.search("Creature") == -1 && jsonObj[randTemp].type_line.search("Land") == -1) {
+                        deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
+                    }
+                }
+            }
+            console.table(deck);
+
+            deck.forEach(card => {
+                var deckBody = document.createElement('p');
+                deckBody.textContent = card[0] + ' ' + card[1] + ' ' + card[2];
+                header.appendChild(deckBody);
+            });
+        }
+    </script>
+</body>
+<footer>
+    <h1></h1>
+</footer>
