@@ -80,8 +80,17 @@
 
             while (deck.length < landCt) {
                 var randTemp = parseInt(Math.random() * 100000, 10) % jsonObj.length;
+                var colorMatch = false;
                 if (jsonObj[randTemp].set_type != 'memorablilia' && jsonObj[randTemp].set_type != 'funny') {
-                    if (jsonObj[randTemp].color_identity[0] == null || colors.find[jsonObj[randTemp].color_identity[0]] != -1 && jsonObj[randTemp].color_identity[1] == null || colors.find[jsonObj[randTemp].color_identity[1]] != -1 && jsonObj[randTemp].color_identity[2] == null || colors.find[jsonObj[randTemp].color_identity[2]] != -1 && jsonObj[randTemp].color_identity[3] == null || colors.find[jsonObj[randTemp].color_identity[3]] != -1 && jsonObj[randTemp].color_identity[4] == null || colors.find[jsonObj[randTemp].color_identity[4]] != -1) {
+                    for (var i = 0; i < colors.length; i++) {
+                        if (jsonObj[randTemp].color_identity[0] == null && jsonObj[randTemp].produced_mana != null) {
+                            colorMatch = true;
+                        }
+                        if (jsonObj[randTemp].color_identity.indexOf(colors[i]) != -1) {
+                            colorMatch = true;
+                        }
+                    }
+                    if (colorMatch) {
                         if (snow) {
                             if (jsonObj[randTemp].type_line.search("Land") != -1) {
                                 deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
@@ -97,8 +106,21 @@
             }
             while (deck.length < landCt + creatureCt) {
                 var randTemp = parseInt(Math.random() * 100000, 10) % jsonObj.length;
+                var colorMatch = false;
                 if (jsonObj[randTemp].set_type != 'memorablilia' && jsonObj[randTemp].set_type != 'funny') {
-                    if (jsonObj[randTemp].color_identity[0] == null || colors.find[jsonObj[randTemp].color_identity[0]] != -1 && jsonObj[randTemp].color_identity[1] == null || colors.find[jsonObj[randTemp].color_identity[1]] != -1 && jsonObj[randTemp].color_identity[2] == null || colors.find[jsonObj[randTemp].color_identity[2]] != -1 && jsonObj[randTemp].color_identity[3] == null || colors.find[jsonObj[randTemp].color_identity[3]] != -1 && jsonObj[randTemp].color_identity[4] == null || colors.find[jsonObj[randTemp].color_identity[4]] != -1) {
+                    for (var i = 0; i < jsonObj[randTemp].color_identity.length; i++) {
+                        if (jsonObj[randTemp].color_identity[0] == null) {
+                            colorMatch = true;
+                        }
+                        else if (colors.indexOf(jsonObj[randTemp].color_identity[i]) != -1) {
+                            colorMatch = true;
+                        }
+                        else {
+                            colorMatch = false;
+                            i = jsonObj[randTemp].color_identity.length;
+                        }
+                    }
+                    if (colorMatch) {
                         if (snow) {
                             if (jsonObj[randTemp].type_line.search("Creature") != -1) {
                                 deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
@@ -114,9 +136,21 @@
             }
             while (deck.length < 60) {
                 var randTemp = parseInt(Math.random() * 100000, 10) % jsonObj.length;
+                var colorMatch = false;
                 if (jsonObj[randTemp].set_type != 'memorablilia' && jsonObj[randTemp].set_type != 'funny') {
-                    if (jsonObj[randTemp].color_identity[0] == null || colors.find[jsonObj[randTemp].color_identity[0]] != -1 && jsonObj[randTemp].color_identity[1] == null || colors.find[jsonObj[randTemp].color_identity[1]] != -1 && jsonObj[randTemp].color_identity[2] == null || colors.find[jsonObj[randTemp].color_identity[2]] != -1 && jsonObj[randTemp].color_identity[3] == null || colors.find[jsonObj[randTemp].color_identity[3]] != -1 && jsonObj[randTemp].color_identity[4] == null || colors.find[jsonObj[randTemp].color_identity[4]] != -1) {
-
+                    for (var i = 0; i < jsonObj[randTemp].color_identity.length; i++) {
+                        if (jsonObj[randTemp].color_identity[0] == null) {
+                            colorMatch = true;
+                        }
+                        else if (colors.indexOf(jsonObj[randTemp].color_identity[i]) != -1) {
+                            colorMatch = true;
+                        }
+                        else {
+                            colorMatch = false
+                            i = jsonObj[randTemp].color_identity.length;
+                        }
+                    }
+                    if (colorMatch) {
                         if (snow) {
                             if (jsonObj[randTemp].type_line.search("Creature") == -1 && jsonObj[randTemp].type_line.search("Land") == -1) {
                                 deck.push([1, jsonObj[randTemp].name, '(' + jsonObj[randTemp].set.toUpperCase() + ')']);
