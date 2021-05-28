@@ -15,5 +15,11 @@ function generateDeck(cardList, format, colors) {
   if (format == "commander" || format == "c_highlander") {
     if (format == "commander") {
       while (deck.length == 0) {
-        if(cardList[Math.floor(Math.random() * cardList.length)].component != "token" && cardList[Math.floor(Math.random() * cardList.length)].type_line.indexOf("Legendary") >= 0 && cardList[Math.floor(Math.random() * cardList.length)].type_line.indexOf("Creature") >= 0) {
-          
+        var temp = Math.floor(Math.random() * cardList.length
+        if(cardList[temp].component != "token" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
+          deck.push(JSON.parse(cardList[temp]);
+        }
+      }
+    }
+    //Build 100 card decks here
+  }
