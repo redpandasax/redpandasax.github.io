@@ -12,7 +12,7 @@ function deckGen(format, colors) {
 function generateDeck(cardList, format, colors) {
   var deckColors = colors;
   var deck = new Array();
-  if (format == "commander" || format == "c_highlander") {
+  if (format == "commander" || format == "c_highlander") { //100 card decks
     if (format == "commander") {
       while (deck.length == 0) {
         var temp = Math.floor(Math.random() * cardList.length
@@ -22,4 +22,5 @@ function generateDeck(cardList, format, colors) {
       }
     }
     //Build 100 card decks here
+    
   }
