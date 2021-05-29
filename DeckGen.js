@@ -15,12 +15,37 @@ function generateDeck(cardList, format, colors) {
   if (format == "commander" || format == "c_highlander") { //100 card decks
     if (format == "commander") {
       while (deck.length == 0) {
-        var temp = Math.floor(Math.random() * cardList.length
-        if(cardList[temp].component != "token" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
+        var temp = Math.floor(Math.random() * cardList.length)
+        if (cardList[temp].component != "token" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
           deck.push(JSON.parse(cardList[temp]);
         }
       }
     }
     //Build 100 card decks here
-    
+    //Figure out commander rules for lands
+    while (deck.length < 39) {
+      var temp = Math.floor(Math.random() * cardList.length);
+      //if (cardList[temp].component != "token" && cardList[temp].type_line.indexOf("Land") >= 0 && cardList[temp].color_identity ==
+    }
+    while (deck.length < 100) {
+      var temp = Math.floor(Math.random() * cardList.length);
+      var matchesColor = true;
+      var isDupe = false;
+      for (i = 0; i < cardList[temp].colorIdentity.length; i ++) {
+        var colorExists = false;
+        for (j = 0; j < colors.length; j ++) {
+          if (cardList[temp].color_identity[i] == colors[j]) {
+            colorExists = true;
+          }
+        }
+        if (!colorExists) {
+          matchesColor = false;
+        }
+      }
+      for (i = 0; i < deck.length; i ++) {
+        if (deck[i] == cardList[temp]) {
+          isDupe = true;
+        }
+      }
+      if (cardList[temp].component != "token" && cardList[temp].type_line.indexOf("Land") < 0 && matchesColor && !isDupe) 
   }
