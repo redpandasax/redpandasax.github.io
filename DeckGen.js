@@ -16,8 +16,8 @@ function generateDeck(cardList, format, colors) {
     if (format == "commander") {
       while (deck.length == 0) {
         var temp = Math.floor(Math.random() * cardList.length)
-        if (cardList[temp].component != "token" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
-          deck.push(JSON.parse(cardList[temp]);
+        if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
+          deck.push(JSON.parse(cardList[temp]));
         }
       }
     }
@@ -43,9 +43,12 @@ function generateDeck(cardList, format, colors) {
         }
       }
       for (i = 0; i < deck.length; i ++) {
-        if (deck[i] == cardList[temp]) {
+        if (deck[i].name == cardList[temp].name) {
           isDupe = true;
         }
       }
-      if (cardList[temp].component != "token" && cardList[temp].type_line.indexOf("Land") < 0 && matchesColor && !isDupe) 
+      if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") < 0 && matchesColor && !isDupe) {
+        deck.push(JSON.parse(cardList[temp]));
+      }
+    }
   }
