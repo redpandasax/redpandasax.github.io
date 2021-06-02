@@ -34,7 +34,7 @@ function generateDeck(cardList, format, colors) {
       var temp = Math.floor(Math.random() * cardList.length);
       var matchesColor = true;
       var isDupe = false;
-      for (i = 0; i < cardList[temp].colorIdentity.length; i ++) {
+      for (i = 0; i < cardList[temp].color_identity.length; i ++) {
         var colorExists = false;
         for (j = 0; j < deckColors.length; j ++) {
           if (cardList[temp].color_identity[i] == deckColors[j]) {
@@ -59,7 +59,7 @@ function generateDeck(cardList, format, colors) {
       var temp = Math.floor(Math.random() * cardList.length);
       var matchesColor = true;
       var isDupe = false;
-      for (i = 0; i < cardList[temp].colorIdentity.length; i ++) {
+      for (i = 0; i < cardList[temp].color_identity.length; i ++) {
         var colorExists = false;
         for (j = 0; j < deckColors.length; j ++) {
           if (cardList[temp].color_identity[i] == deckColors[j]) {
