@@ -83,9 +83,9 @@ function generateDeck(cardList, format, colors) {
       }
     }
   }
-  var deckPrint;
-  for (i = 0; i < deck.length; i ++) {
-    deckPrint = deckPrint + "\n1 " + deck[i].name
+  var deckPrint = "1 " + deck[0].name;
+  for (i = 1; i < deck.length; i ++) {
+    deckPrint = deckPrint + "\n1 " + deck[i].name;
   }
   console.log(deckPrint);
 }
