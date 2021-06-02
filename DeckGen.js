@@ -78,3 +78,4 @@ function generateDeck(cardList, format, colors) {
       }
     }
   }
+}
