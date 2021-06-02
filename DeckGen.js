@@ -25,7 +25,27 @@ function generateDeck(cardList, format, colors) {
     //Figure out commander rules for lands
     while (deck.length < 39) {
       var temp = Math.floor(Math.random() * cardList.length);
-      //if (cardList[temp].component != "token" && cardList[temp].type_line.indexOf("Land") >= 0 && cardList[temp].color_identity ==
+      var matchesColor = true;
+      var isDupe = false;
+      for (i = 0; i < cardList[temp].colorIdentity.length; i ++) {
+        var colorExists = false;
+        for (j = 0; j < colors.length; j ++) {
+          if (cardList[temp].color_identity[i] == colors[j]) {
+            colorExists = true;
+          }
+        }
+        if (!colorExists) {
+          matchesColor = false;
+        }
+      }
+      for (i = 0; i < deck.length; i ++) {
+        if (deck[i].name == cardList[temp].name) {
+          isDupe = true;
+        }
+      }
+      if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land"))) {
+        deck.push(JSON.parse(cardList[temp]));
+      }
     }
     while (deck.length < 100) {
       var temp = Math.floor(Math.random() * cardList.length);
