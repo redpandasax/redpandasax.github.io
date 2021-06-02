@@ -6,7 +6,7 @@ function deckGen(format, colors) {
   request.responseType = 'json';
   request.send();
 
-  request.onload = function () { const cards = request.response; generateDeck(cards, format, colors); }
+  request.onload = function () { const cards = request.response; generateDeck(cards, "commander", new Array()); }
 }
 //Make a card object, then make an array to hold the card objects in.  The array will be the deck
 function generateDeck(cardList, format, colors) {
@@ -18,6 +18,12 @@ function generateDeck(cardList, format, colors) {
         var temp = Math.floor(Math.random() * cardList.length)
         if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
           deck.push(JSON.parse(cardList[temp]));
+          deckColors = new Array();
+          if (cardList[temp].color_identity.length != null) {
+            for (i = 0; i < cardList[temp].color_identity.length; i ++) {
+              deckColors.push(cardList[temp].color_identity[i]);
+            }
+          }
         }
       }
     }
@@ -29,8 +35,8 @@ function generateDeck(cardList, format, colors) {
       var isDupe = false;
       for (i = 0; i < cardList[temp].colorIdentity.length; i ++) {
         var colorExists = false;
-        for (j = 0; j < colors.length; j ++) {
-          if (cardList[temp].color_identity[i] == colors[j]) {
+        for (j = 0; j < deckColors.length; j ++) {
+          if (cardList[temp].color_identity[i] == deckColors[j]) {
             colorExists = true;
           }
         }
@@ -53,8 +59,8 @@ function generateDeck(cardList, format, colors) {
       var isDupe = false;
       for (i = 0; i < cardList[temp].colorIdentity.length; i ++) {
         var colorExists = false;
-        for (j = 0; j < colors.length; j ++) {
-          if (cardList[temp].color_identity[i] == colors[j]) {
+        for (j = 0; j < deckColors.length; j ++) {
+          if (cardList[temp].color_identity[i] == deckColors[j]) {
             colorExists = true;
           }
         }
