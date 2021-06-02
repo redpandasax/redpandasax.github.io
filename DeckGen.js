@@ -1,6 +1,6 @@
 
 function deckGen(format, colors) {
-  let requestURL = 'https://c2.scryfall.com/file/scryfall-bulk/oracle-cards/oracle-cards-20210528090524.json';
+  let requestURL = 'https://c2.scryfall.com/file/scryfall-bulk/oracle-cards/oracle-cards-20210602090506.json';
   let request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';
