@@ -51,7 +51,7 @@ function generateDeck(cardList, format, colors) {
           isDupe = true;
         }
       }
-      if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land"))) {
+      if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land") >= 0)) {
         var card = cardList[temp];
         deck.push(card);
         console.log(card);
