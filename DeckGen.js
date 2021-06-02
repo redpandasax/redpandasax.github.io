@@ -78,4 +78,6 @@ function generateDeck(cardList, format, colors) {
       }
     }
   }
+  for (i = 0; i < deck.length; i ++) {
+    console.log(arr[i].name);
 }
