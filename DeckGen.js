@@ -19,6 +19,7 @@ function generateDeck(cardList, format, colors) {
         if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
           var card = cardList[temp];
           deck.push(card);
+          console.log(card);
           deckColors = new Array();
           if (cardList[temp].color_identity != null) {
             for (i = 0; i < cardList[temp].color_identity.length; i ++) {
@@ -53,6 +54,7 @@ function generateDeck(cardList, format, colors) {
       if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land"))) {
         var card = cardList[temp];
         deck.push(card);
+        console.log(card);
       }
     }
     while (deck.length < 100) {
