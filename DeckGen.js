@@ -17,10 +17,10 @@ function generateDeck(cardList, format, colors) {
       while (deck.length == 0) {
         var temp = Math.floor(Math.random() * cardList.length)
         if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
-          var card = JSON.parse(cardList[temp]);
+          var card = cardList[temp];
           deck.push(card);
           deckColors = new Array();
-          if (cardList[temp].color_identity.length != null) {
+          if (cardList[temp].color_identity != null) {
             for (i = 0; i < cardList[temp].color_identity.length; i ++) {
               deckColors.push(cardList[temp].color_identity[i]);
             }
@@ -51,7 +51,7 @@ function generateDeck(cardList, format, colors) {
         }
       }
       if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land"))) {
-        var card = JSON.parse(cardList[temp]);
+        var card = cardList[temp];
         deck.push(card)
       }
     }
@@ -76,7 +76,7 @@ function generateDeck(cardList, format, colors) {
         }
       }
       if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") < 0 && matchesColor && !isDupe) {
-        var card = JSON.parse(cardList[temp]);
+        var card = cardList[temp];
         deck.push(card)
       }
     }
