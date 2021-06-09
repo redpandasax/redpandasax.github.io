@@ -12,8 +12,10 @@ function deckGen(format, colors) {
 function generateDeck(cardList, format, colors) {
   var deckColors = colors;
   var deck = new Array();
+  var clLands = 0;
   if (format == "commander" || format == "c_highlander") { //100 card decks
     if (format == "commander") {
+      var clCommand = false;
       while (deck.length == 0) {
         var temp = Math.floor(Math.random() * cardList.length)
         if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Legendary") >= 0 && cardList[temp].type_line.indexOf("Creature") >= 0) {
@@ -25,6 +27,9 @@ function generateDeck(cardList, format, colors) {
             for (i = 0; i < cardList[temp].color_identity.length; i ++) {
               deckColors.push(cardList[temp].color_identity[i]);
             }
+          }
+          else {
+            clCommand = true;
           }
         }
       }
@@ -51,9 +56,12 @@ function generateDeck(cardList, format, colors) {
           isDupe = true;
         }
       }
-      if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land") >= 0)) {
+      if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land") >= 0) && (clCommand || clLands < 19)) {
         var card = cardList[temp];
         deck.push(card);
+        if (card.color_identity == null) {
+          clLands ++;
+        }
         console.log(card);
       }
     }
@@ -98,9 +106,12 @@ function generateDeck(cardList, format, colors) {
           matchesColor = false;
         }
       }
-      if (cardList[temp].component != "token" && cardList[temp].legalities[format] == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor) {
+      if (cardList[temp].component != "token" && cardList[temp].legalities[format] == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (clLands < 12 || deckColors == null)) {
         var card = cardList[temp];
         deck.push(card);
+        if (card.color_identity == null) {
+          clLands ++;
+        }
         console.log(card);
       }
     }
