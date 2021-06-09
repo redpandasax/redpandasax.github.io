@@ -137,8 +137,8 @@ function generateDeck(cardList, format, colors) {
   }
   var deckPrint = "1 " + deck[0].name;
   for (i = 1; i < deck.length; i ++) {
-    deckPrint = deckPrint + "\n1 " + deck[i].name;
+    deckPrint = deckPrint + "<br>" + deck[i].name;
   }
   console.log(deckPrint);
-  document.getElementById("deck").innerHTML = deckPrint;
+  document.write(deckPrint);
 }
