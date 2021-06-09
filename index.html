@@ -1,5 +1,6 @@
 <header>
 	<h1>Random Deck Generator for Magic the Gathering</h1>
+	permissions-policy: interest-cohort=()
 </header>
 <body>
 	<form>
@@ -21,7 +22,7 @@
 	</form>
 	<p id="deck">This is your random deck</p>
 	<script src="DeckGen.js">
-		deckGen(Format, [Blue,Red,Black,White,Green], cardUrl);
+		deckGen(format, [color1,color2,color3,color4,color5], cardUrl);
 		console.log("success");
 	</script>
 </body>
