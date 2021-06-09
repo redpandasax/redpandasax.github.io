@@ -1,8 +1,9 @@
-<head>
+<header>
 	<h1>Random Deck Generator for Magic the Gathering</h1>
-</head>
+</header>
 <body>
-	<form>
+	<script src="DeckGen.js"></script>
+	<form onsubmit="deckGen(format, [color1,color2,color3,color4,color5], cardUrl)">
   		<label for="cardUrl">Paste the download link for the oracle cards bulk data:</label>
   		<input type="url" id="cardUrl" name="cardUrl"><br>
 		<label for="format">Format:</label>
@@ -20,10 +21,6 @@
 		<input type="submit" value="Generate Deck">
 	</form>
 	<p id="deck">This is your random deck</p>
-	<script src="DeckGen.js">
-		deckGen(format, [color1,color2,color3,color4,color5], cardUrl);
-		console.log("success");
-	</script>
 </body>
-<foot>
-</foot>
+<footer>
+</footer>
