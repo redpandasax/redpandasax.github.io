@@ -56,10 +56,10 @@ function generateDeck(cardList, format, colors) {
           isDupe = true;
         }
       }
-      if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land") >= 0) && (clCommand || clLands < 19)) {
+      if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (!isDupe || cardList[temp].type_line.indexOf("Basic Land") >= 0) && (clCommand || clLands < 19 || cardList[temp].produced_mana != ["C"])) {
         var card = cardList[temp];
         deck.push(card);
-        if (card.color_identity == null) {
+        if (card.mana_produced == ["C"]) {
           clLands ++;
         }
         console.log(card);
@@ -106,10 +106,10 @@ function generateDeck(cardList, format, colors) {
           matchesColor = false;
         }
       }
-      if (cardList[temp].component != "token" && cardList[temp].legalities[format] == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (clLands < 12 || deckColors == null)) {
+      if (cardList[temp].component != "token" && cardList[temp].legalities[format] == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor && (clLands < 12 || deckColors == null || cardList[temp].produced_mana != ["C"])) {
         var card = cardList[temp];
         deck.push(card);
-        if (card.color_identity == null) {
+        if (card.mana_produced == ["C"]) {
           clLands ++;
         }
         console.log(card);
