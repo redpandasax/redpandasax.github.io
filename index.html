@@ -3,7 +3,7 @@
 </header>
 <body>
 	<script src="DeckGen.js"></script>
-	<form onsubmit="deckGen(format, [color1,color2,color3,color4,color5], cardUrl)">
+	<form onsubmit="deckGen(format.value, [color1.value,color2.value,color3.value,color4.value,color5.value], cardUrl.value)">
   		<label for="cardUrl">Paste the download link for the oracle cards bulk data:</label>
   		<input type="url" id="cardUrl" name="cardUrl"><br>
 		<label for="format">Format:</label>
