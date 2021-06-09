@@ -84,45 +84,43 @@ function generateDeck(cardList, format, colors) {
     }
   }
   else {
-    if (format == "standard") {
-      while (deck.length < 24) {
-        var temp = Math.floor(Math.random() * cardList.length);
-        var matchesColor = true;
-        for (i = 0; i < cardList[temp].color_identity.length; i ++) {
-          var colorExists = false;
-          for (j = 0; j < deckColors.length; j ++) {
-            if (cardList[temp].color_identity[i] == deckColors[j]) {
-              colorExists = true;
-            }
-          }
-          if (!colorExists) {
-            matchesColor = false;
+    while (deck.length < 24) {
+      var temp = Math.floor(Math.random() * cardList.length);
+      var matchesColor = true;
+      for (i = 0; i < cardList[temp].color_identity.length; i ++) {
+        var colorExists = false;
+        for (j = 0; j < deckColors.length; j ++) {
+          if (cardList[temp].color_identity[i] == deckColors[j]) {
+            colorExists = true;
           }
         }
-        if (cardList[temp].component != "token" && cardList[temp].legalities.standard == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor) {
-          var card = cardList[temp];
-          deck.push(card);
-          console.log(card);
+        if (!colorExists) {
+          matchesColor = false;
         }
       }
-      while (deck.length < 60) {
-        var temp = Math.floor(Math.random() * cardList.length);
-        var matchesColor = true;
-        for (i = 0; i < cardList[temp].color_identity.length; i ++) {
-          var colorExists = false;
-          for (j = 0; j < deckColors.length; j ++) {
-            if (cardList[temp].color_identity[i] == deckColors[j]) {
-              colorExists = true;
-            }
-          }
-          if (!colorExists) {
-            matchesColor = false;
+      if (cardList[temp].component != "token" && cardList[temp].legalities[format] == "legal" && cardList[temp].type_line.indexOf("Land") >= 0 && matchesColor) {
+        var card = cardList[temp];
+        deck.push(card);
+        console.log(card);
+      }
+    }
+    while (deck.length < 60) {
+      var temp = Math.floor(Math.random() * cardList.length);
+      var matchesColor = true;
+      for (i = 0; i < cardList[temp].color_identity.length; i ++) {
+        var colorExists = false;
+        for (j = 0; j < deckColors.length; j ++) {
+          if (cardList[temp].color_identity[i] == deckColors[j]) {
+            colorExists = true;
           }
         }
-        if (cardList[temp].component != "token" && cardList[temp].legalities.commander == "legal" && cardList[temp].type_line.indexOf("Land") < 0 && cardList[temp].type_line.indexOf("Card // Card") < 0 && matchesColor) {
-          var card = cardList[temp];
-          deck.push(card)
+        if (!colorExists) {
+          matchesColor = false;
         }
+      }
+      if (cardList[temp].component != "token" && cardList[temp].legalities.[format] == "legal" && cardList[temp].type_line.indexOf("Land") < 0 && cardList[temp].type_line.indexOf("Card // Card") < 0 && matchesColor) {
+        var card = cardList[temp];
+        deck.push(card)
       }
     }
   }
