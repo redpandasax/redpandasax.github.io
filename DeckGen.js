@@ -140,4 +140,5 @@ function generateDeck(cardList, format, colors) {
     deckPrint = deckPrint + "\n1 " + deck[i].name;
   }
   console.log(deckPrint);
+  document.getElementById("deck").innerHTML = deckPrint;
 }
