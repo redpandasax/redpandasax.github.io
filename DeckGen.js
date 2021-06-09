@@ -140,5 +140,5 @@ function generateDeck(cardList, format, colors) {
     deckPrint = deckPrint + "<br>1 " + deck[i].name;
   }
   console.log(deckPrint);
-  document.getElementById("deck").innerHTML = "This is your random deck" + deckPrint;
+  document.getElementById("deck").innerHTML = "This is your random deck<br>" + deckPrint;
 }
