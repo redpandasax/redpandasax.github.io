@@ -137,8 +137,8 @@ function generateDeck(cardList, format, colors) {
   }
   var deckPrint = "1 " + deck[0].name;
   for (i = 1; i < deck.length; i ++) {
-    deckPrint = deckPrint + "<br>" + deck[i].name;
+    deckPrint = deckPrint + "<br>1 " + deck[i].name;
   }
   console.log(deckPrint);
-  document.write(deckPrint);
+  document.getElementById("deck").innerHTML = "This is your random deck" + deckPrint;
 }
