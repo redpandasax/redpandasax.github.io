@@ -1,19 +1,12 @@
+<title>
+	RedPandaSax's MTG Deck Randomizer
+</title>
 <header>
+	<style src="stles.css"></style>
+	<script src="DeckGen.js"></script>
 	<h1>Random Deck Generator for Magic the Gathering</h1>
 </header>
 <body>
-	<script>
-		function ini(format, colorBool, colorList, cardUrl) {
-			var colors = new Array();
-			for (var i = 0; i < 5; i ++) {
-				if (colorBool[i]) {
-					colors.push(colorList[i]);
-				}
-			}
-			deckGen(format, colors, cardUrl);
-		}
-	</script>
-	<script src="DeckGen.js"></script>
 	<form onsubmit="ini(Format.value, [document.getElementById(&quot;color1&quot;).checked,document.getElementById(&quot;color2&quot;).checked,document.getElementById(&quot;color3&quot;).checked,document.getElementById(&quot;color4&quot;).checked,document.getElementById(&quot;color5&quot;).checked], [Blue.value,Red.value,Black.value,White.value,Green.value], cardUrl.value);event.preventDefault();">
   		<label for="cardUrl">Paste the download link for the oracle cards bulk data:</label>
   		<input type="url" id="cardUrl" name="cardUrl"><br>
