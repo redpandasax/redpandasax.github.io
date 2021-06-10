@@ -1,4 +1,6 @@
 # redpandasax.github.io
+Disclaimer: I am not great at coding, so much of this may be unreadable to people that know how to code better than me, and I apologize for that
+
 Directions for using this:
 1. Go to https://scryfall.com/docs/api/bulk-data and copy the link address that is labeled as the Oracle Cards download link
 2. Paste that into the input box where it is asked for
