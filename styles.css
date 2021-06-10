@@ -11,7 +11,8 @@ h1 {
 }
 
 footer {
-  bottom:0;
+  position: fixed;
+  bottom:0px;
   background-color: darkslateblue;
   color: gainsboro;
   font-family: georgia;
