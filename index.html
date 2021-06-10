@@ -7,7 +7,7 @@
 	<h1>Random Deck Generator for Magic the Gathering</h1>
 </header>
 <body>
-	<form onsubmit="ini(Format.value, [document.getElementById(&quot;color1&quot;).checked,document.getElementById(&quot;color2&quot;).checked,document.getElementById(&quot;color3&quot;).checked,document.getElementById(&quot;color4&quot;).checked,document.getElementById(&quot;color5&quot;).checked], [Blue.value,Red.value,Black.value,White.value,Green.value], cardUrl.value);event.preventDefault();">
+	<form onsubmit="ini(Format.value, [document.getElementById(&quot;color1&quot;).checked,document.getElementById(&quot;color2&quot;).checked,document.getElementById(&quot;color3&quot;).checked,document.getElementById(&quot;color4&quot;).checked,document.getElementById(&quot;color5&quot;).checked], [Blue.value,Red.value,Black.value,White.value,Green.value], cardUrl.value);event.preventDefault();" autocomplete="off">
   		<label for="cardUrl">Paste the download link for the oracle cards bulk data:</label>
   		<input type="url" id="cardUrl" name="cardUrl"><br>
 		<label for="format">Format:</label>
