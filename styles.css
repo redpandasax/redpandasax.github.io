@@ -1,14 +1,11 @@
 body {
   background-color: darkslateblue;
+  color: gainsboro;
+  font-family: georgia;
+  font-size: 18
 }
 
 h1 {
   color: lightsteelblue;
   text-align: center;
-}
-
-p {
-  color: gainsboro;
-  font-family: georgia;
-  font-size: 18;
 }
