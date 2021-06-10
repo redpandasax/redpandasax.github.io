@@ -1,0 +1,14 @@
+body {
+  background-color: darkslateblue;
+}
+
+h1 {
+  color: lightsteelblue;
+  text-align: center;
+}
+
+p {
+  color: gainsboro;
+  font-family: georgia;
+  font-size: 18;
+}
