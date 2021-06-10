@@ -1,4 +1,14 @@
-
+//A thing to help parse data from the website
+function ini(format, colorBool, colorList, cardUrl) {
+  var colors = new Array();
+  for (var i = 0; i < 5; i ++) {
+    if (colorBool[i]) {
+      colors.push(colorList[i]);
+    }
+  }
+  deckGen(format, colors, cardUrl);
+}
+//The function that reads in the oracle cards bulk data
 function deckGen(format, colors, cURL) {
   let requestURL = cURL;
   let request = new XMLHttpRequest();
@@ -8,7 +18,7 @@ function deckGen(format, colors, cURL) {
 
   request.onload = function () { const cards = request.response; generateDeck(cards, format, colors); }
 }
-//Make a card object, then make an array to hold the card objects in.  The array will be the deck
+//The main code.  This handles just about everything
 function generateDeck(cardList, format, colors) {
   var deckColors = colors;
   var deck = new Array();
