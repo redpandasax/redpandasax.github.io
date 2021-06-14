@@ -1,17 +1,30 @@
-<polygon points="0,42 25,0 75,0 100,42 75,84 25,84" style="fill:none; stroke:black" tile/>
-<polygon points="0,126 25,84 75,84 100,126 75,168 25,168" style="fill:none; stroke:black" tile/>
-<polygon points="0,210 25,168 75,168 100,210 75,252 25,252" style="fill:none; stroke:black" tile/>
-<polygon points="0,294 25,252 75,252 100,294 75,336 25,336" style="fill:none; stroke:black" tile/>
+<polygon points="0,42 25,0 75,0 100,42 75,84 25,84" style="fill:none; stroke:black" tile="0"/>
+<polygon points="0,126 25,84 75,84 100,126 75,168 25,168" style="fill:none; stroke:black" tile="1"/>
+<polygon points="0,210 25,168 75,168 100,210 75,252 25,252" style="fill:none; stroke:black" tile="2"/>
+<polygon points="0,294 25,252 75,252 100,294 75,336 25,336" style="fill:none; stroke:black" tile="3"/>
+<polygon points="0,378 25,336 75,336 100,378 75,420 25,420" style="fill:none; stroke:black" tile="4"/>
+<polygon points="0,462 25,420 75,420 100,462 75,504 25,504" style="fill:none; stroke:black" tile="5"/>
+<polygon points="0,546 25,504 75,504 100,546 75,588 25,588" style="fill:none; stroke:black" tile="6"/>
+<polygon points="0,294 25,252 75,252 100,294 75,336 25,336" style="fill:none; stroke:black" tile="7"/>
+<polygon points="0,630 25,588 75,588 100,630 75,672 25,672" style="fill:none; stroke:black" tile="8"/>
+<polygon points="0,714 25,672 75,672 100,714 75,756 25,756" style="fill:none; stroke:black" tile="9"/>
 
-<polygon points="75,84 100,42 150,42 175,84 150,126 100,126" style="fill:none; stroke:black" tile/>
-<polygon points="75,168 100,126 150,126 175,168 150,210 100,210" style="fill:none; stroke:black" tile/>
-<polygon points="75,252 100,210 150,210 175,252 150,294 100,294" style="fill:none; stroke:black" tile/>
+<polygon points="75,84 100,42 150,42 175,84 150,126 100,126" style="fill:none; stroke:black" tile="10"/>
+<polygon points="75,168 100,126 150,126 175,168 150,210 100,210" style="fill:none; stroke:black" tile="11"/>
+<polygon points="75,252 100,210 150,210 175,252 150,294 100,294" style="fill:none; stroke:black" tile="12"/>
+<polygon points="75,336 100,294 150,294 175,336 150,378 100,378" style="fill:none; stroke:black" tile="13"/>
+<polygon points="75,420 100,378 150,378 175,420 150,462 100,462" style="fill:none; stroke:black" tile="14"/>
+<polygon points="75,504 100,462 150,462 175,504 150,546 100,546" style="fill:none; stroke:black" tile="15"/>
+<polygon points="75,588 100,546 150,546 175,588 150,630 100,630" style="fill:none; stroke:black" tile="16"/>
+<polygon points="75,672 100,630 150,630 175,672 150,714 100,714" style="fill:none; stroke:black" tile="17"/>
+<polygon points="75,756 100,714 150,714 175,756 150,798 100,798" style="fill:none; stroke:black" tile="18"/>
+<polygon points="75,840 100,798 150,798 175,840 150,882 100,882" style="fill:none; stroke:black" tile="19"/>
 
 
-<polygon points="150,42 175,0 225,0 250,42 225,84 175,84" style="fill:none; stroke:black" tile/>
-<polygon points="150,126 175,84 225,84 250,126 225,168 175,168" style="fill:none; stroke:black" tile/>
-<polygon points="150,210 175,168 225,168 250,210 225,252 175,252" style="fill:none; stroke:black" tile/>
-<polygon points="150,294 175,252 225,252 250,294 225,336 175,336" style="fill:none; stroke:black" tile/>
+<polygon points="150,42 175,0 225,0 250,42 225,84 175,84" style="fill:none; stroke:black" tile="20"/>
+<polygon points="150,126 175,84 225,84 250,126 225,168 175,168" style="fill:none; stroke:black" tile="21"/>
+<polygon points="150,210 175,168 225,168 250,210 225,252 175,252" style="fill:none; stroke:black" tile="22"/>
+<polygon points="150,294 175,252 225,252 250,294 225,336 175,336" style="fill:none; stroke:black" tile="23"/>
 
 <polygon points="225,84 250,42 300,42 325,84 300,126 250,126" style="fill:none; stroke:black" tile/>
 <polygon points="225,168 250,126 300,126 325,168 300,210 250,210" style="fill:none; stroke:black" tile/>
