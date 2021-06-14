@@ -1,0 +1,18 @@
+<polygon points="0,42 25,0 75,0 100,42 75,84 25,84" style="fill:none; stroke:black" tile/>
+<polygon points="0,126 25,84 75,84 100,126 75,168 25,168" style="fill:none; stroke:black" tile/>
+<polygon points="0,210 25,168 75,168 100,210 75,252 25,252" style="fill:none; stroke:black" tile/>
+<polygon points="0,294 25,252 75,252 100,294 75,336 25,336" style="fill:none; stroke:black" tile/>
+
+<polygon points="75,84 100,42 150,42 175,84 150,126 100,126" style="fill:none; stroke:black" tile/>
+<polygon points="75,168 100,126 150,126 175,168 150,210 100,210" style="fill:none; stroke:black" tile/>
+<polygon points="75,252 100,210 150,210 175,252 150,294 100,294" style="fill:none; stroke:black" tile/>
+
+
+<polygon points="150,42 175,0 225,0 250,42 225,84 175,84" style="fill:none; stroke:black" tile/>
+<polygon points="150,126 175,84 225,84 250,126 225,168 175,168" style="fill:none; stroke:black" tile/>
+<polygon points="150,210 175,168 225,168 250,210 225,252 175,252" style="fill:none; stroke:black" tile/>
+<polygon points="150,294 175,252 225,252 250,294 225,336 175,336" style="fill:none; stroke:black" tile/>
+
+<polygon points="225,84 250,42 300,42 325,84 300,126 250,126" style="fill:none; stroke:black" tile/>
+<polygon points="225,168 250,126 300,126 325,168 300,210 250,210" style="fill:none; stroke:black" tile/>
+<polygon points="225,252 250,210 300,210 325,252 300,294 250,294" style="fill:none; stroke:black" tile/>
