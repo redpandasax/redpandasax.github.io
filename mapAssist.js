@@ -1,14 +1,12 @@
 //Prints the coordinate of the cursor for the user
-// Find your root SVG element
-var svg = document.getElementById("mapSVG");
 
 // Create an SVGPoint for future math
-var pt = svg.createSVGPoint();
+var pt = this.createSVGPoint();
 
 // Get point in global SVG space
 function cursorPoint(evt){
   pt.x = evt.clientX; pt.y = evt.clientY;
-  return pt.matrixTransform(svg.getScreenCTM().inverse());
+  return pt.matrixTransform(this.getScreenCTM().inverse());
 }
 
 svg.addEventListener("mousemove",function(evt){
