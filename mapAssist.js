@@ -13,6 +13,6 @@ function cursorPoint(evt){
 
 svg.addEventListener("mousemove",function(evt){
   var loc = cursorPoint(evt);
-  document.getElementById("coord").innerHTML = Math.floor(loc.x)/100 + " " + Math.floor(loc.y)/100;
+  document.getElementById("coord").firstChild.data = Math.floor(loc.x)/100 + " " + Math.floor(loc.y)/100;
   // Use loc.x and loc.y here
 },false);
