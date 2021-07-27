@@ -1,4 +1,3 @@
-window.onLoad = layerCard("Blue", "Troop");
 function layerCard(color, type) {
   var canvas = document.getElementById("card");
   var ctx = document.getElementById("card").getContext("2d");
