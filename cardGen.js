@@ -1,3 +1,5 @@
-function layerCard(color) {
+function layerCard(color, type) {
   var canvas = document.getElementById("card");
-  if (color == 
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(document.getElementById("layer0"), 0, 0);
+}
