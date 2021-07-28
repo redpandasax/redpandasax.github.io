@@ -17,7 +17,7 @@
 		<img src="https://drive.google.com/uc?export=view&id=1i5FiJOCz1ia9G70HIOz8krVwx4d8z9b7" id="Blue 2Invest" style="display: none;">
 		<img src="https://drive.google.com/uc?export=view&id=1hMoIkQBbp_rIXTM3FtQGEVpLePSHq0u9" id="Blue 3Invest" style="display: none;">
 		
-		<form id="inputs" onsubmit="layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;),document.getElementById(&quot;invests&quot;).value.split(/\r*\n/).length); event.preventDefault();" autocomplete="off">
+		<form onsubmit="layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;),document.getElementById(&quot;invests&quot;).value.split(/\r*\n/).length); event.preventDefault();" autocomplete="off">
 			<label for="cName">Card Name: </label>
 			<input type="text" id="cName" name="cName" /><br>
 			<label for="cType">Card Type: </label>
@@ -43,7 +43,7 @@
 			<label for="collectorID">Collector ID: </label>
 			<input type="text" id="collectorID" name="collectorID" /><br>
 			
-			<input type="button" onclick="layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;),document.getElementById(&quot;invests&quot;).value.split(/\r*\n/).length);">Submit</button>
+			<input type="submit">
 		</form>
 		<canvas id="card" width="2292" height="3201" />
 		
