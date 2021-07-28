@@ -43,7 +43,7 @@
 			<label for="collectorID">Collector ID: </label>
 			<input type="text" id="collectorID" name="collectorID" /><br>
 			
-			<input type="button" name="Sumbit" onclick="if (document.getElementById(&quot;invests&quot;).value.charAt(0) != null) layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,document.getElementById(&quot;invests&quot;).value.split(&quot;,&quot;).length); else layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,0);"/>
+			<input type="button" name="Sumbit" onclick="if (document.getElementById(&quot;invests&quot;).value.length > 0) layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,document.getElementById(&quot;invests&quot;).value.split(&quot;,&quot;).length); else layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,0);"/>
 		</form>
 		<canvas id="card" width="2292" height="3201" />
 		
