@@ -10,14 +10,28 @@
 		<h1>Secret Card Generator</h1>
 	</header>
 	<body>
-		<img src="https://drive.google.com/uc?export=view&id=1_phSXNt2StQOL6S6Sjq0hzugllEVp0Xh" id="layer0" style="display: none;">
-		<img src="https://drive.google.com/uc?export=view&id=1HQg__5-UGvntukaCQs7XIBPNuxotirdJ" id="layer1" style="display: none;">
-		<img src="https://drive.google.com/uc?export=view&id=1hMoIkQBbp_rIXTM3FtQGEVpLePSHq0u9" id="layer2" style="display: none;">
+		<img src="https://drive.google.com/uc?export=view&id=1_phSXNt2StQOL6S6Sjq0hzugllEVp0Xh" id="Blue Troop" style="display: none;">
+		<img src="https://drive.google.com/uc?export=view&id=1HQg__5-UGvntukaCQs7XIBPNuxotirdJ" id="Blue Textboxes" style="display: none;">
+		<img src="https://drive.google.com/uc?export=view&id=1HQg__5-UGvntukaCQs7XIBPNuxotirdJ" id="imageLayer" style="display: none;">
+		<img src="https://drive.google.com/uc?export=view&id=10jw2gJFIHPwbqJnxiN-IgAyBf8j017su" id="Blue Invest" style="display: none;">
+		<img src="https://drive.google.com/uc?export=view&id=1i5FiJOCz1ia9G70HIOz8krVwx4d8z9b7" id="Blue BiInvest" style="display: none;">
+		<img src="https://drive.google.com/uc?export=view&id=1hMoIkQBbp_rIXTM3FtQGEVpLePSHq0u9" id="Blue TriInvest" style="display: none;">
+		
 		<form id="inputs">
 			<label for="cName">Card Name: </label>
 			<input type="text" id="cName" name="cName" /><br>
 			<label for="cType">Card Type: </label>
-			<input type="text" id="cType" name="cType" /><br>
+			<select name="cType" id="cType">
+				<option value="Item">Item</option>
+				<option value="Troop">Troop</option>
+				<option value="Sorceror">Sorceror</option>
+				<option value="Commander">Commander</option>
+				<option value="Path">Path</option>
+			</select><br>
+			<select for="color">Color: </label>
+			<select name="color" id="color">
+				<option value="Blue">Blue</option>
+			</select>
 			<label for="cost">Casting Cost: </label>
 			<input type="text" id="cost" name="cost" /><br>
 			<label for="invests">Investments: </label>
