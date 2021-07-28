@@ -35,11 +35,11 @@
 			<label for="color">Color: </label>
 			<select name="color" id="color">
 				<option value="Blue">Blue</option>
-			</select>
+			</select><br>
 			<label for="cost">Casting Cost: </label>
 			<input type="text" id="cost" name="cost" /><br>
 			<label for="invests">Investments: </label>
-			<textarea id="invests" name="invests" rows="10" cols="3"></textarea><br>
+			<textarea id="invests" name="invests" rows="3" cols="8"></textarea><br>
 			<label for="body">Card Body: </label><br>
 			<textarea id="body" name="body" rows="10" cols="10"></textarea><br>
 			<label for="artist">Artist: </label>
@@ -47,7 +47,7 @@
 			<label for="collectorID">Collector ID: </label>
 			<input type="text" id="collectorID" name="collectorID" /><br>
 			
-			<input type="button" name="Sumbit" onclick="layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,document.getElementById(&quot;invests&quot;).value.split(/\r*\n/).length);" />
+			<input type="button" name="Sumbit" onclick="if (document.getElementByI(&quot;invests&quot;).value.length > 0) layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,document.getElementById(&quot;invests&quot;).value.split(/\r*\n/).length); else layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,0);"/>
 		</form>
 		<canvas id="card" width="2292" height="3201" />
 		
