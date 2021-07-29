@@ -11,9 +11,9 @@ function layerCard(color, type, investCt, cardArt) {
     ctx.drawImage(document.getElementById(inv), 0, 0, 2292, 3201);
 }
 
-function showImage(src) {
+function showImage(imgId) {
   var img = document.createElement("img");
-  img.src = src;
+  img.src = "https://drive.google.com/uc?export=view&id=".concat(imgId);
   //img.width = width;
   //img.height = height;
   document.body.appendChild(img);
