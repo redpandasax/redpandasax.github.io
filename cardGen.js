@@ -5,7 +5,7 @@ function layerCard(color, type, investCt, cardArt) {
   var l1 = color.concat(" Textboxes");
   var inv = color.concat(" ".concat(investCt.toString().concat("Invest")));
   ctx.drawImage(document.getElementById(l0), 0, 0, 2292, 3201);
-  ctx.drawImage(document.getElementById("cardArt"), 205, 545, 1900, 1070)
+  ctx.drawImage(document.getElementById("cardArt"), 205, 545, 1885, 1075)
   ctx.drawImage(document.getElementById(l1), 0, 0, 2292, 3201);
   if (investCt > 0)
     ctx.drawImage(document.getElementById(inv), 0, 0, 2292, 3201);
