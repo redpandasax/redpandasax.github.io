@@ -44,7 +44,7 @@
 			<input type="text" id="collectorID" name="collectorID" /><br>
 			<label for="image">Image ID from Google Drive(Must have the aspect ratio of 16:9 landscape)</label>
 			<input type="text" id="image" name="image" /><br>
-			<input type="button" id="uploadImg" name="uploadImg" onclick="showImage(document.getElementByI(&quot;image&quot;)">Upload Image</button><br>
+			<input type="button" id="uploadImg" name="uploadImg" onclick="showImage(document.getElementByI(&quot;image&quot;))">Upload Image</button><br>
 			
 			<input type="button" name="Sumbit" onclick="if (document.getElementById(&quot;invests&quot;).value.length > 0) layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,document.getElementById(&quot;invests&quot;).value.split(&quot;,&quot;).length, document.getElementById(&quot;image&quot;).value); else layerCard(document.getElementById(&quot;color&quot;).value,document.getElementById(&quot;cType&quot;).value,0, document.getElementById(&quot;image&quot;).value);"/>
 		</form>
