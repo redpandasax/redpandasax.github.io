@@ -12,9 +12,7 @@ function layerCard(color, type, investCt, cardArt) {
 }
 
 function showImage(imgId) {
-  var img = document.createElement("img");
-  img.src = "https://drive.google.com/uc?export=view&id=".concat(imgId);
   //img.width = width;
   //img.height = height;
-  document.body.appendChild(img);
+  document.getElementById("cardArt").src="https://drive.google.com/uc?export=view&id=".concat(imgId);
 }
